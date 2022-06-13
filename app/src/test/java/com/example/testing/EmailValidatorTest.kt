@@ -1,7 +1,6 @@
 package com.example.testing
 
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
+import org.junit.Assert.*
 import org.junit.Test
 
 class EmailValidatorTest {
@@ -40,4 +39,30 @@ class EmailValidatorTest {
     fun emailValidator_NullEmail_ReturnsFalse() {
         assertFalse(EmailValidator.isValidEmail(null))
     }
+
+    @Test
+    fun myTestFail() {
+        assertTrue(EmailValidator.isValidEmail("АБВГД.COM"))
+    }
+
+    @Test
+    fun myTestMathSqrt() {
+
+        for (i in 0..100) {
+
+            val num = EmailValidator.math(i*i)
+            if (num == i) {
+                assertTrue(true)
+            } else {
+                assertTrue(false)
+            }
+        }
+    }
+
+    @Test
+    fun myTestLength() {
+        val length = EmailValidator.stringLength("ABC")
+        assertEquals("LENGTH ERROR", length, 3)
+    }
+
 }
