@@ -4,6 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 
 import java.util.regex.Pattern
+import kotlin.math.sqrt
 
 class EmailValidator : TextWatcher {
 
@@ -36,5 +37,14 @@ class EmailValidator : TextWatcher {
         fun isValidEmail(email: CharSequence?): Boolean {
             return email != null && EMAIL_PATTERN.matcher(email).matches()
         }
+
+        fun math(number: Int) : Int {
+            return sqrt(number.toDouble()).toInt()
+        }
+
+        fun stringLength(string: String) : Int {
+            return string.length
+        }
     }
+
 }
